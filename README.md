@@ -9,12 +9,15 @@ Follow the steps as listed here : https://docs.cloudera.com/runtime/7.0.3/phoeni
 1 > 
 
 Go to the HBase service > Configuration tab > Scope > (Service-Wide),add following property
-     Name: phoenix.schema.isNamespaceMappingEnabled
-     Value: true
+
+          Name: phoenix.schema.isNamespaceMappingEnabled
+          Value: true
+          
 Description: Enables mapping of tables of a Phoenix schema to a non-default HBase namespace. To enable mapping of a schema to a non-default namespace, set the value of this property to true. The default setting for this property is false.
 
      Name: phoenix.schema.mapSystemTablesToNamespace
      Value: true
+     
 Description: With true setting (default): After namespace mapping is enabled with the other property, all system tables, if any, are migrated to a namespace called system. With false setting: System tables are associated with the default namespace.
 
 2> 
