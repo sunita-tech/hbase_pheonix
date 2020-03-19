@@ -145,28 +145,29 @@ Took 0.2971 seconds
 you can see the us_population table 
 
 
-   hbase(main):005:0> scan 'US_POPULATION'
-   ROW                                      COLUMN+CELL                                                                                                         
-    CALOS ANGELES                           column=0:\x00\x00\x00\x00, timestamp=1584644064195, value=x                                                         
-    CALOS ANGELES                           column=0:\x80\x0B, timestamp=1584644064195, value=\x80\x00\x00\x00\x00:\xAA\xDD                                     
-    NYNEW YORK                              column=0:\x00\x00\x00\x00, timestamp=1584644008603, value=x                                                         
-    NYNEW YORK                              column=0:\x80\x0B, timestamp=1584644008603, value=\x80\x00\x00\x00\x00|AK                                           
-   2 row(s)
+        hbase(main):005:0> scan 'US_POPULATION'
+        ROW                                      COLUMN+CELL                                                                                                         
+         CALOS ANGELES                           column=0:\x00\x00\x00\x00, timestamp=1584644064195, value=x                                                         
+         CALOS ANGELES                           column=0:\x80\x0B, timestamp=1584644064195, value=\x80\x00\x00\x00\x00:\xAA\xDD                                     
+         NYNEW YORK                              column=0:\x00\x00\x00\x00, timestamp=1584644008603, value=x                                                         
+         NYNEW YORK                              column=0:\x80\x0B, timestamp=1584644008603, value=\x80\x00\x00\x00\x00|AK                                           
+        2 row(s)
 
-finally go to Phoenix and drop the us_population table
+Finally goto Phoenix and drop the us_population table
+   
      0: jdbc:phoenix:> drop table us_population;
      No rows affected (1.126 seconds)
 
-verify from hbase shell , with list command, you wont see the table in hbase.
-   hbase(main):001:0> list
-   TABLE                                                                                                                                                        
-   SYSTEM:CATALOG                                                                                                                                               
-   SYSTEM:FUNCTION                                                                                                                                              
-   SYSTEM:LOG                                                                                                                                                   
-   SYSTEM:MUTEX                                                                                                                                                 
-   SYSTEM:SEQUENCE                                                                                                                                              
-   SYSTEM:STATS                                                                                                                                                 
-   ATLAS_ENTITY_AUDIT_EVENTS                                                                                                                                    
-   atlas_janus                                                                                                                                                  
-   test                                                                                                                                                         
-   9 row(s)
+Verify from hbase shell , with list command, you wont see the table in hbase.
+       hbase(main):001:0> list
+          TABLE                                                                                                                                                        
+             SYSTEM:CATALOG                                                                                                                                               
+             SYSTEM:FUNCTION                                                                                                                                              
+             SYSTEM:LOG                                                                                                                                                   
+             SYSTEM:MUTEX                                                                                                                                                 
+             SYSTEM:SEQUENCE                                                                                                                                              
+             SYSTEM:STATS                                                                                                                                                 
+             ATLAS_ENTITY_AUDIT_EVENTS                                                                                                                                    
+             atlas_janus                                                                                                                                                  
+             test                                                                                                                                                         
+            9 row(s)
