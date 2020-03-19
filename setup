@@ -1,0 +1,50 @@
+Setting up Pheonix on Hbase with CDP DC 7.0.3 
+
+
+Steps
+
+Follow the steps as listed here : https://docs.cloudera.com/runtime/7.0.3/phoenix-access-data/topics/phoenix-mapping-schemas.html
+
+
+1 > 
+
+Go to the HBase service > Configuration tab > Scope > (Service-Wide) ,add following property
+Name: phoenix.schema.isNamespaceMappingEnabled
+Value: true
+Description: Enables mapping of tables of a Phoenix schema to a non-default HBase namespace. To enable mapping of a schema to a non-default namespace, set the value of this property to true. The default setting for this property is false.
+
+Name: phoenix.schema.mapSystemTablesToNamespace
+Value: true
+Description: With true setting (default): After namespace mapping is enabled with the other property, all system tables, if any, are migrated to a namespace called system. With false setting: System tables are associated with the default namespace.
+
+2> 
+
+Go to the HBase service > Configuration tab >Select Scope > Gateway.
+Locate the HBase Client Advanced Configuration Snippet (Safety Valve) for hbase-site.xml property or search for it by typing its name in the Search box.
+Add the following property values:
+
+Name: phoenix.schema.isNamespaceMappingEnabled
+Value: true
+Description: Enables mapping of tables of a Phoenix schema to a non-default HBase namespace. To enable mapping of the schema to a non-default namespace, set the value of this property to true. The default setting for this property is false.
+
+
+
+
+Name: phoenix.schema.mapSystemTablesToNamespace
+Value: true
+Description: With true setting (default): After namespace mapping is enabled with the other property, all system tables, if any, are migrated to a namespace called system.With false setting: System tables are associated with the default namespace.
+
+
+3> Restart the role and service when Cloudera Manager prompts you to restart.
+
+
+4> check in ranger if user exists unde Hbase that will have permission to add/delete tables in Hbase
+
+
+now ssh to Hbase node with hbase user
+
+sudo -u hbase -s /bin/bash to change to hbase unix user.
+kinit hbsase user 
+
+
+
