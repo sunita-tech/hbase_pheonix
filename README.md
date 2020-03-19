@@ -8,58 +8,55 @@ Follow the steps as listed here : https://docs.cloudera.com/runtime/7.0.3/phoeni
 
 1 > 
 
-Go to the HBase service > Configuration tab > Scope > (Service-Wide) ,add following property
-Name: phoenix.schema.isNamespaceMappingEnabled
-Value: true
+Go to the HBase service > Configuration tab > Scope > (Service-Wide),add following property
+     Name: phoenix.schema.isNamespaceMappingEnabled
+     Value: true
 Description: Enables mapping of tables of a Phoenix schema to a non-default HBase namespace. To enable mapping of a schema to a non-default namespace, set the value of this property to true. The default setting for this property is false.
 
-Name: phoenix.schema.mapSystemTablesToNamespace
-Value: true
+     Name: phoenix.schema.mapSystemTablesToNamespace
+     Value: true
 Description: With true setting (default): After namespace mapping is enabled with the other property, all system tables, if any, are migrated to a namespace called system. With false setting: System tables are associated with the default namespace.
 
 2> 
 
 Go to the HBase service > Configuration tab >Select Scope > Gateway.
+
 Locate the HBase Client Advanced Configuration Snippet (Safety Valve) for hbase-site.xml property or search for it by typing its name in the Search box.
+
 Add the following property values:
 
-Name: phoenix.schema.isNamespaceMappingEnabled
-Value: true
+     Name: phoenix.schema.isNamespaceMappingEnabled
+     Value: true
 Description: Enables mapping of tables of a Phoenix schema to a non-default HBase namespace. To enable mapping of the schema to a non-default namespace, set the value of this property to true. The default setting for this property is false.
 
 
-
-
-Name: phoenix.schema.mapSystemTablesToNamespace
-Value: true
+     Name: phoenix.schema.mapSystemTablesToNamespace
+     Value: true
 Description: With true setting (default): After namespace mapping is enabled with the other property, all system tables, if any, are migrated to a namespace called system.With false setting: System tables are associated with the default namespace.
-
 
 3> Restart the role and service when Cloudera Manager prompts you to restart.
 
-
 4> check in ranger if user exists unde Hbase that will have permission to add/delete tables in Hbase
-goto ranger > access manager > role based policies > click on cm_hbase > check "	all - table, column-family, column" has users
-eg hbase or clouder-scm assigned 
+goto ranger > access manager > role based policies > click on cm_hbase > check " all - table, column-family, column" 
+has users eg hbase or clouder-scm (used in example below)
 
 
-Now ssh to Hbase node( look in cm for Hbase instance) with hbase user
+Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto Phoenix SQL 
 
-     sudo -u hbase -s /bin/bash to change to hbase unix user.
-     kinit hbase user or cloudera-scm/admin
+
+     $sudo -u hbase -s /bin/bash 
+     $kinit hbase user or cloudera-scm/admin
      provide password eg Clouder20!
      $/usr/bin/phoenix-sqlline
 
-#if successful you will see below for phoenix
-     Building list of tables and columns for tab-completion (set fastconnect to true to skip)...
-     134/134 (100%) Done
-     Done
-     sqlline version 1.2.0
-
-Phoenix Demo:
+#if successful to Phoenix SQL you will see below for comment with prompt to  jdbc:phoenix:> 
+          Building list of tables and columns for tab-completion (set fastconnect to true to skip)...
+          134/134 (100%) Done
+          Done
+          sqlline version 1.2.0
+          jdbc:phoenix:>
 
 1 > check existing tables, you should see something like below:
-
 
      jdbc:phoenix:> !tables
      +------------+--------------+-------------+---------------+----------+------------+----------------------------+-----------------+--------------+-----------+
