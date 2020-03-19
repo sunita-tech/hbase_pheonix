@@ -152,4 +152,23 @@ ROW                                      COLUMN+CELL
  NYNEW YORK                              column=0:\x80\x0B, timestamp=1584644008603, value=\x80\x00\x00\x00\x00|AK                                           
 2 row(s)
 
-Took 0.1290 seconds   
+finally go to Phoenix and drop the us_population table
+0: jdbc:phoenix:> drop table us_population;
+No rows affected (1.126 seconds)
+
+verify from hbase shell , with list command, you wont see the table in hbase.
+h
+base(main):001:0> list
+TABLE                                                                                                                                                        
+SYSTEM:CATALOG                                                                                                                                               
+SYSTEM:FUNCTION                                                                                                                                              
+SYSTEM:LOG                                                                                                                                                   
+SYSTEM:MUTEX                                                                                                                                                 
+SYSTEM:SEQUENCE                                                                                                                                              
+SYSTEM:STATS                                                                                                                                                 
+ATLAS_ENTITY_AUDIT_EVENTS                                                                                                                                    
+atlas_janus                                                                                                                                                  
+test                                                                                                                                                         
+9 row(s)
+
+done
