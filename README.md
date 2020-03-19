@@ -61,16 +61,16 @@ Phoenix Demo:
 1 > check existing tables, you should see something like below:
 
 
-jdbc:phoenix:> !tables
-+------------+--------------+-------------+---------------+----------+------------+----------------------------+-----------------+--------------+-----------+
-                         | TABLE_CAT  | TABLE_SCHEM  | TABLE_NAME  |  TABLE_TYPE   | REMARKS  | TYPE_NAME  | SELF_REFERENCING_COL_NAME  | REF_GENERATION  | INDEX_STATE  | IMMUTABLE |
-                         +------------+--------------+-------------+---------------+----------+------------+----------------------------+-----------------+--------------+-----------+
-                         |            | SYSTEM       | CATALOG     | SYSTEM TABLE  |          |            |                            |                 |              | false     |
-                         |            | SYSTEM       | FUNCTION    | SYSTEM TABLE  |          |            |                            |                 |              | false     |
-                         |            | SYSTEM       | LOG         | SYSTEM TABLE  |          |            |                            |                 |              | true      |
-                         |            | SYSTEM       | SEQUENCE    | SYSTEM TABLE  |          |            |                            |                 |              | false     |
-                         |            | SYSTEM       | STATS       | SYSTEM TABLE  |          |            |                            |                 |              | false     |
-                         +------------+--------------+-------------+---------------+----------+------------+----------------------------+-----------------+--------------+-----------+
+     jdbc:phoenix:> !tables
+     +------------+--------------+-------------+---------------+----------+------------+----------------------------+-----------------+--------------+-----------+
+                              | TABLE_CAT  | TABLE_SCHEM  | TABLE_NAME  |  TABLE_TYPE   | REMARKS  | TYPE_NAME  | SELF_REFERENCING_COL_NAME  | REF_GENERATION  | INDEX_STATE  | IMMUTABLE |
+                              +------------+--------------+-------------+---------------+----------+------------+----------------------------+-----------------+--------------+-----------+
+                              |            | SYSTEM       | CATALOG     | SYSTEM TABLE  |          |            |                            |                 |              | false     |
+                              |            | SYSTEM       | FUNCTION    | SYSTEM TABLE  |          |            |                            |                 |              | false     |
+                              |            | SYSTEM       | LOG         | SYSTEM TABLE  |          |            |                            |                 |              | true      |
+                              |            | SYSTEM       | SEQUENCE    | SYSTEM TABLE  |          |            |                            |                 |              | false     |
+                              |            | SYSTEM       | STATS       | SYSTEM TABLE  |          |            |                            |                 |              | false     |
+                              +------------+--------------+-------------+---------------+----------+------------+----------------------------+-----------------+--------------+-----------+
 
 2> create table in phoenix
 
@@ -159,7 +159,8 @@ Finally goto Phoenix and drop the us_population table
      No rows affected (1.126 seconds)
 
 Verify from hbase shell , with list command, you wont see the table in hbase.
-       hbase(main):001:0> list
+     
+      hbase(main):001:0> list
           TABLE                                                                                                                                                        
              SYSTEM:CATALOG                                                                                                                                               
              SYSTEM:FUNCTION                                                                                                                                              
