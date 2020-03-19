@@ -8,7 +8,7 @@ Follow the steps as listed here : https://docs.cloudera.com/runtime/7.0.3/phoeni
 
 1 > 
 
-Go to the HBase service > Configuration tab > Scope > (Service-Wide),add following property
+Locate the HBase service > Configuration tab > Scope > (Service-Wide) > HBase Service Advanced Configuration Snippet (Safety Valve) for hbase-site.xml
 
           Name: phoenix.schema.isNamespaceMappingEnabled
           Value: true
@@ -22,9 +22,7 @@ Description: With true setting (default): After namespace mapping is enabled wit
 
 2> 
 
-Go to the HBase service > Configuration tab >Select Scope > Gateway.
-
-Locate the HBase Client Advanced Configuration Snippet (Safety Valve) for hbase-site.xml property or search for it by typing its name in the Search box.
+Go to the HBase service > Configuration tab >Select Scope > Gateway > Locate the HBase Client Advanced Configuration Snippet (Safety Valve) for hbase-site.xml property or search for it by typing its name in the Search box.
 
 Add the following property values:
 
