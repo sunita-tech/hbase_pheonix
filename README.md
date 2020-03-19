@@ -82,12 +82,12 @@ Phoenix Demo:
         No rows affected (1.321 seconds)
 
 3> check if table is created "us_population"
-        0: jdbc:phoenix:> !tables
+     0: jdbc:phoenix:> !tables
+    +------------+--------------+----------------+---------------+----------+------------+----------------------------+-----------------+--------------+--------+
+      | TABLE_CAT  | TABLE_SCHEM  |   TABLE_NAME   |  TABLE_TYPE   | REMARKS  | TYPE_NAME  | SELF_REFERENCING_COL_NAME  | REF_GENERATION  | INDEX_STATE  | IMMUTA |
         +------------+--------------+----------------+---------------+----------+------------+----------------------------+-----------------+--------------+--------+
-        | TABLE_CAT  | TABLE_SCHEM  |   TABLE_NAME   |  TABLE_TYPE   | REMARKS  | TYPE_NAME  | SELF_REFERENCING_COL_NAME  | REF_GENERATION  | INDEX_STATE  | IMMUTA |
-        +------------+--------------+----------------+---------------+----------+------------+----------------------------+-----------------+--------------+--------+
-        |            | SYSTEM       | CATALOG        | SYSTEM TABLE  |          |            |                            |                 |              | false  |
-        |            | SYSTEM       | FUNCTION       | SYSTEM TABLE  |          |            |                            |                 |              | false  |
+       |            | SYSTEM       | CATALOG        | SYSTEM TABLE  |          |            |                            |            |              | false  |
+       |            | SYSTEM       | FUNCTION       | SYSTEM TABLE  |          |            |                            |                 |              | false  |
         |            | SYSTEM       | LOG            | SYSTEM TABLE  |          |            |                            |                 |              | true   |
         |            | SYSTEM       | SEQUENCE       | SYSTEM TABLE  |          |            |                            |                 |              | false  |
         |            | SYSTEM       | STATS          | SYSTEM TABLE  |          |            |                            |                 |              | false  |
