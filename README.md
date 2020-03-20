@@ -6,7 +6,7 @@ Summary:
           1> Setting up Phoenix
           2> Demo for Phoenix interective sql
           3> Demo for Phoenix script for bulk upload
-          4> Demo for Phoenix spark script
+         
 
 1 > Setting up Phoenix:
 
