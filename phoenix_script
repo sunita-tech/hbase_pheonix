@@ -2,6 +2,19 @@ use this command line to call script and load file into yahoo table
 
 Steps 
 1 > execute python script
-$python yahoodata.py
+      $python yahoo.data.py > yahoo.csv
 
-/usr/bin/phoenix-psql yahoo.sql yahoo.csv
+2>  Execute phoenix command to upload data using yahoo.sql
+
+      $/usr/bin/phoenix-psql yahoo.sql yahoo.csv
+
+3 > verify the table and data into phoenix
+ 
+   $/usr/bin/phoenix-sqlline
+ 
+Commands 
+
+ !tables
+ select * from yahoo;
+ 
+ 
