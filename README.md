@@ -10,9 +10,9 @@ Summary:
 
 1 > Setting up Phoenix:
 
-Steps
+          Steps
 
-Follow the steps as listed here : https://docs.cloudera.com/runtime/7.0.3/phoenix-access-data/topics/phoenix-mapping-schemas.html
+          Follow the steps as listed here : https://docs.cloudera.com/runtime/7.0.3/phoenix-access-data/topics/phoenix-mapping-schemas.html
 
 
 1 > 
@@ -50,7 +50,8 @@ Description: With true setting (default): After namespace mapping is enabled wit
  click on ranger webui > access manager > role based policies > click on cm_hbase > check "all - table, column-family, column" 
 >check under users > e.g. hbase,admin or clouder-scm (used in example below)
 
-2 > Demo for Phonix Interective SQL
+
+2> Demo for Phonix Interective SQL
 
 Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto Phoenix SQL 
 
@@ -67,7 +68,7 @@ Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto P
           sqlline version 1.2.0
           jdbc:phoenix:>
 
-1 > check existing tables, you should see something like below:
+          1 > check existing tables, you should see something like below:
 
      jdbc:phoenix:> !tables
      +------------+--------------+-------------+---------------+----------+------------+----------------------------+-----------------+--------------+-----------+
@@ -80,7 +81,7 @@ Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto P
                               |            | SYSTEM       | STATS       | SYSTEM TABLE  |          |            |                            |                 |              | false     |
                               +------------+--------------+-------------+---------------+----------+------------+----------------------------+-----------------+--------------+-----------+
 
-2> create table in phoenix
+          2> create table in phoenix
 
         0: jdbc:phoenix:> create table if not exists us_population(
         . . . . . . . . > state char(2) not null,
@@ -89,7 +90,7 @@ Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto P
         . . . . . . . . > constraint my_pk primary key (state,city));
         No rows affected (1.321 seconds)
 
-3> check if table is created "us_population"
+          3> check if table is created "us_population"
 
           0: jdbc:phoenix:> !tables
   
@@ -104,14 +105,14 @@ Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto P
           |            |              | US_POPULATION  | TABLE         |          |            |                            |                 |              | false  |
           +------------+--------------+----------------+---------------+----------+------------+----------------------------+-----------------+--------------+--------+
 0
-4> Now insert some values to this table as below
+      4> Now insert some values to this table as below
 
       0: jdbc:phoenix:> upsert into  us_population VALUES ('NY', 'NEW YORK' , 8143179);
       1 row affected (0.066 seconds)
       0: jdbc:phoenix:> upsert into  us_population VALUES ('CA', 'LOS ANGELES' , 3844829);
       1 row affected (0.006 seconds)
 
-5 > check the values 
+      5 > check the values 
 
       SELECT * FROM US_POPULATION;
       +--------+--------------+-------------+
@@ -129,10 +130,7 @@ Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto P
       +--------+--------------+-------------+
       1 row selected (0.015 seconds)
 
-
-
-6> 
-Now exit from check from hbase shell 
+     6> Now exit from check from hbase shell 
 
       hbase(main):001:0> list
       TABLE                                                                                                                                                        
@@ -146,11 +144,11 @@ Now exit from check from hbase shell
       US_POPULATION                                                                                                                                                
       atlas_janus                                                                                                                                                  
       test                                                                                                                                                         
-10 row(s)
-Took 0.2971 seconds                                                                                                                                          
-=> ["SYSTEM:CATALOG", "SYSTEM:FUNCTION", "SYSTEM:LOG", "SYSTEM:MUTEX", "SYSTEM:SEQUENCE", "SYSTEM:STATS", "ATLAS_ENTITY_AUDIT_EVENTS", "US_POPULATION", "atlas_janus", "test"]
+          10 row(s)
+          Took 0.2971 seconds                                                                                                                                          
+          => ["SYSTEM:CATALOG", "SYSTEM:FUNCTION", "SYSTEM:LOG", "SYSTEM:MUTEX", "SYSTEM:SEQUENCE", "SYSTEM:STATS", "ATLAS_ENTITY_AUDIT_EVENTS", "US_POPULATION", "atlas_janus", "test"]
 
-you can see the us_population table 
+         You can details of the us_population table in hbase
 
 
         hbase(main):005:0> scan 'US_POPULATION'
@@ -161,12 +159,12 @@ you can see the us_population table
          NYNEW YORK                              column=0:\x80\x0B, timestamp=1584644008603, value=\x80\x00\x00\x00\x00|AK                                           
         2 row(s)
 
-Finally goto Phoenix and drop the us_population table
+      Finally goto Phoenix and drop the us_population table
    
      0: jdbc:phoenix:> drop table us_population;
      No rows affected (1.126 seconds)
 
-Verify from hbase shell , with list command, you wont see the table in hbase.
+     Verify from hbase shell , with list command, you wont see the table in hbase.
      
       hbase(main):001:0> list
           TABLE                                                                                                                                                        
@@ -180,11 +178,13 @@ Verify from hbase shell , with list command, you wont see the table in hbase.
              atlas_janus                                                                                                                                                  
              test                                                                                                                                                         
             9 row(s)
-3 > Demo for Phoenix Script with bulk load
+            
+            
+3 > Demo for Laoding bult data using Phoenix SQL
  
 
            1>  Download yahoo.sql
-           2>  Download python script to generate bulk load in CSV format (yahaodata.py)
+           2>  Download python script to generate bulk load in CSV format (yahoodata.py)
            3>  Execute script using phoenix script
  
           Output/s:
