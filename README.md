@@ -37,9 +37,9 @@ Description: With true setting (default): After namespace mapping is enabled wit
 
 3> Restart the role and service when Cloudera Manager prompts you to restart.
 
-4> check in ranger if user exists unde Hbase that will have permission to add/delete tables in Hbase
-goto ranger > access manager > role based policies > click on cm_hbase > check " all - table, column-family, column" 
-has users eg hbase or clouder-scm (used in example below)
+4> check in Ranger if user exists under Hbase that will have permission to add/delete tables in Hbase:
+ click on ranger webui > access manager > role based policies > click on cm_hbase > check "all - table, column-family, column" 
+>check under users > e.g. hbase,admin or clouder-scm (used in example below)
 
 
 Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto Phoenix SQL 
@@ -50,7 +50,7 @@ Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto P
      provide password eg Clouder20!
      $/usr/bin/phoenix-sqlline
 
-#if successful to Phoenix SQL you will see below for comment with prompt to  jdbc:phoenix:> 
+#For a successful to login to Phoenix SQL you will see something like below, before prompt as "jdbc:phoenix:>" 
           Building list of tables and columns for tab-completion (set fastconnect to true to skip)...
           134/134 (100%) Done
           Done
