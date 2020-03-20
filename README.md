@@ -101,9 +101,7 @@ Description: With true setting (default): After namespace mapping is enabled wit
           |            | SYSTEM       | SEQUENCE       | SYSTEM TABLE  |          |            |                            |                 |              | false  |
           |            | SYSTEM       | STATS          | SYSTEM TABLE  |          |            |                            |                 |              | false  |
           |            |              | US_POPULATION  | TABLE         |          |            |                            |                 |              | false  |
-          +------------+--------------+----------------+---------------+----------+------------+----------------------------+-----------------+--------------+--------+
-0
-    
+          +------------+--------------+----------------+---------------+----------+------------+----------------------------+-----------------+--------------+--------+   
     4> Now insert some values to this table as below
     
       0: jdbc:phoenix:> upsert into  us_population VALUES ('NY', 'NEW YORK' , 8143179);
