@@ -1,14 +1,11 @@
+1 > get into phoenix SQL line
 
+  sudo -u hbase -s /bin/bash 
+  kinit hbase user or cloudera-scm/admin
+  provide password eg Clouder20!
+  $/usr/bin/phoenix-sqlline
 
-sudo -u hbase -s /bin/bash to change to hbase unix user.
-kinit hbase user or cloudera-scm/admin
-provide password eg Clouder20!
-$/usr/bin/phoenix-sqlline
-
-
-Phoenix Demo:
-
-
+2 > check the existing tables
 
 0: jdbc:phoenix:> !tables
 
