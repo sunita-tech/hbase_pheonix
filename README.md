@@ -52,11 +52,13 @@ Description: With true setting (default): After namespace mapping is enabled wit
 
 
 2 > Demo for Phonix Interective SQL :
+
     SSH to Hbase node( look in cm for Hbase instance) with hbase user and goto Phoenix SQL 
 
      $sudo -u hbase -s /bin/bash 
-     $kinit hbase user or cloudera-scm/admin
+     $kinit cloudera-scm/admin
      provide password eg Clouder20!
+     cd ~
      $/usr/bin/phoenix-sqlline
 
      #For a successful to login to Phoenix SQL you will see something like below, before prompt as "jdbc:phoenix:>" 
@@ -145,8 +147,7 @@ Description: With true setting (default): After namespace mapping is enabled wit
           Took 0.2971 seconds                                                                                                                                          
           => ["SYSTEM:CATALOG", "SYSTEM:FUNCTION", "SYSTEM:LOG", "SYSTEM:MUTEX", "SYSTEM:SEQUENCE", "SYSTEM:STATS", "ATLAS_ENTITY_AUDIT_EVENTS", "US_POPULATION", "atlas_janus", "test"]
 
-  You can details of the us_population table in hbase
-
+         You can see details of the us_population table in hbase
 
         hbase(main):005:0> scan 'US_POPULATION'
         ROW                                      COLUMN+CELL                                                                                                         
@@ -156,7 +157,7 @@ Description: With true setting (default): After namespace mapping is enabled wit
          NYNEW YORK                              column=0:\x80\x0B, timestamp=1584644008603, value=\x80\x00\x00\x00\x00|AK                                           
         2 row(s)
 
-  Finally goto Phoenix and drop the us_population table
+    Finally goto Phoenix and drop the us_population table
    
      0: jdbc:phoenix:> drop table us_population;
      No rows affected (1.126 seconds)
@@ -177,9 +178,10 @@ Description: With true setting (default): After namespace mapping is enabled wit
             9 row(s)
             
            
-           
-3 > Demo for Laoding bult data using Phoenix SQL :
- 
+     
+     
+     
+ 3 > Demo for Laoding bult data using Phoenix SQL:
 
            1>  Download yahoo.sql
            2>  Download python script to generate bulk load in CSV format (yahoodata.py)
