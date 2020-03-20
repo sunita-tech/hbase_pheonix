@@ -1,5 +1,5 @@
 
-Setting up Pheonix on Hbase with CDP DC 7.0.3 with tutorial and Demo
+Setting up Pheonix on Hbase with CDP DC 7.0.3 with Demo
 
 Summary:
 
