@@ -181,7 +181,7 @@ Description: With true setting (default): After namespace mapping is enabled wit
      
      
      
- 3 > Demo for Laoding bult data using Phoenix SQL:
+ 3 > Demo for Loading bult data using Phoenix SQL:
 
            1>  Download yahoo.sql
            2>  Download python script to generate bulk load in CSV format (yahoodata.py)
