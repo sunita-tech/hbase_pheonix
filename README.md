@@ -171,7 +171,7 @@ Demo for Phonix Interective SQL :
             
            
           
- Demo for Loading bult data using Phoenix SQL:
+ Demo for Loading bulk data using Phoenix script:
 
            1>  Download yahoo.sql
            2>  Download python script to generate bulk load in CSV format (yahoodata.py)
