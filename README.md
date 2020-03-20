@@ -47,28 +47,26 @@ Description: With true setting (default): After namespace mapping is enabled wit
 3> Restart the role and service when Cloudera Manager prompts you to restart.
 
 4> check in Ranger if user exists under Hbase that will have permission to add/delete tables in Hbase:
- click on ranger webui > access manager > role based policies > click on cm_hbase > check "all - table, column-family, column" 
->check under users > e.g. hbase,admin or clouder-scm (used in example below)
+ click on ranger webui > access manager > role based policies > click on cm_hbase > check "all - table, column-family, column"   >check under users > e.g. hbase,admin or clouder-scm (used in example below)
 
 
-2> Demo for Phonix Interective SQL
 
-Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto Phoenix SQL 
-
+2 > Demo for Phonix Interective SQL :
+    SSH to Hbase node( look in cm for Hbase instance) with hbase user and goto Phoenix SQL 
 
      $sudo -u hbase -s /bin/bash 
      $kinit hbase user or cloudera-scm/admin
      provide password eg Clouder20!
      $/usr/bin/phoenix-sqlline
 
-#For a successful to login to Phoenix SQL you will see something like below, before prompt as "jdbc:phoenix:>" 
+     #For a successful to login to Phoenix SQL you will see something like below, before prompt as "jdbc:phoenix:>" 
           Building list of tables and columns for tab-completion (set fastconnect to true to skip)...
           134/134 (100%) Done
           Done
           sqlline version 1.2.0
           jdbc:phoenix:>
 
-          1 > check existing tables, you should see something like below:
+     1 > check existing tables, you should see something like below:
 
      jdbc:phoenix:> !tables
      +------------+--------------+-------------+---------------+----------+------------+----------------------------+-----------------+--------------+-----------+
@@ -81,7 +79,7 @@ Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto P
                               |            | SYSTEM       | STATS       | SYSTEM TABLE  |          |            |                            |                 |              | false     |
                               +------------+--------------+-------------+---------------+----------+------------+----------------------------+-----------------+--------------+-----------+
 
-          2> create table in phoenix
+    2> create table in phoenix
 
         0: jdbc:phoenix:> create table if not exists us_population(
         . . . . . . . . > state char(2) not null,
@@ -90,7 +88,7 @@ Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto P
         . . . . . . . . > constraint my_pk primary key (state,city));
         No rows affected (1.321 seconds)
 
-          3> check if table is created "us_population"
+    3> check if table is created "us_population"
 
           0: jdbc:phoenix:> !tables
   
@@ -105,14 +103,15 @@ Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto P
           |            |              | US_POPULATION  | TABLE         |          |            |                            |                 |              | false  |
           +------------+--------------+----------------+---------------+----------+------------+----------------------------+-----------------+--------------+--------+
 0
-      4> Now insert some values to this table as below
-
+    
+    4> Now insert some values to this table as below
+    
       0: jdbc:phoenix:> upsert into  us_population VALUES ('NY', 'NEW YORK' , 8143179);
       1 row affected (0.066 seconds)
       0: jdbc:phoenix:> upsert into  us_population VALUES ('CA', 'LOS ANGELES' , 3844829);
       1 row affected (0.006 seconds)
 
-      5 > check the values 
+    5> check the values 
 
       SELECT * FROM US_POPULATION;
       +--------+--------------+-------------+
@@ -148,7 +147,7 @@ Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto P
           Took 0.2971 seconds                                                                                                                                          
           => ["SYSTEM:CATALOG", "SYSTEM:FUNCTION", "SYSTEM:LOG", "SYSTEM:MUTEX", "SYSTEM:SEQUENCE", "SYSTEM:STATS", "ATLAS_ENTITY_AUDIT_EVENTS", "US_POPULATION", "atlas_janus", "test"]
 
-         You can details of the us_population table in hbase
+  You can details of the us_population table in hbase
 
 
         hbase(main):005:0> scan 'US_POPULATION'
@@ -159,7 +158,7 @@ Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto P
          NYNEW YORK                              column=0:\x80\x0B, timestamp=1584644008603, value=\x80\x00\x00\x00\x00|AK                                           
         2 row(s)
 
-      Finally goto Phoenix and drop the us_population table
+  Finally goto Phoenix and drop the us_population table
    
      0: jdbc:phoenix:> drop table us_population;
      No rows affected (1.126 seconds)
@@ -179,8 +178,9 @@ Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto P
              test                                                                                                                                                         
             9 row(s)
             
-            
-3 > Demo for Laoding bult data using Phoenix SQL
+           
+           
+3 > Demo for Laoding bult data using Phoenix SQL :
  
 
            1>  Download yahoo.sql
