@@ -9,7 +9,7 @@ Summary:
          
 Note: Follow the steps as listed here : https://docs.cloudera.com/runtime/7.0.3/phoenix-access-data/topics/phoenix-mapping-schemas.html
 
-1> Setting up Phoenix:
+Setting up Phoenix:
 
 1> Locate the HBase service > Configuration tab > Scope > (Service-Wide) > HBase Service Advanced Configuration Snippet (Safety Valve) for hbase-site.xml
 
@@ -23,19 +23,17 @@ Description: Enables mapping of tables of a Phoenix schema to a non-default HBas
      
 Description: With true setting (default): After namespace mapping is enabled with the other property, all system tables, if any, are migrated to a namespace called system. With false setting: System tables are associated with the default namespace.
 
-2> 
-
-Go to the HBase service > Configuration tab >Select Scope > Gateway > Locate the HBase Client Advanced Configuration Snippet (Safety Valve) for hbase-site.xml property or search for it by typing its name in the Search box.
-
-Add the following property values:
+2> Go to the HBase service > Configuration tab >Select Scope > Gateway > Locate the HBase Client Advanced Configuration Snippet (Safety Valve) for hbase-site.xml property or search for it by typing its name in the Search box.Add the following property values:
 
      Name: phoenix.schema.isNamespaceMappingEnabled
      Value: true
+     
 Description: Enables mapping of tables of a Phoenix schema to a non-default HBase namespace. To enable mapping of the schema to a non-default namespace, set the value of this property to true. The default setting for this property is false.
 
 
      Name: phoenix.schema.mapSystemTablesToNamespace
      Value: true
+
 Description: With true setting (default): After namespace mapping is enabled with the other property, all system tables, if any, are migrated to a namespace called system.With false setting: System tables are associated with the default namespace.
 
 3> Restart the role and service when Cloudera Manager prompts you to restart.
@@ -45,7 +43,7 @@ Description: With true setting (default): After namespace mapping is enabled wit
 
 
 
-2 > Demo for Phonix Interective SQL :
+Demo for Phonix Interective SQL :
 
     SSH to Hbase node( look in cm for Hbase instance) with hbase user and goto Phoenix SQL 
 
@@ -172,10 +170,8 @@ Description: With true setting (default): After namespace mapping is enabled wit
             9 row(s)
             
            
-     
-     
-     
- 3 > Demo for Loading bult data using Phoenix SQL:
+          
+ Demo for Loading bult data using Phoenix SQL:
 
            1>  Download yahoo.sql
            2>  Download python script to generate bulk load in CSV format (yahoodata.py)
