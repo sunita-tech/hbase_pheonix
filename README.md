@@ -7,17 +7,11 @@ Summary:
           2> Demo for Phoenix interective sql
           3> Demo for Phoenix script for bulk upload
          
+Note: Follow the steps as listed here : https://docs.cloudera.com/runtime/7.0.3/phoenix-access-data/topics/phoenix-mapping-schemas.html
 
-1 > Setting up Phoenix:
+1> Setting up Phoenix:
 
-          Steps
-
-          Follow the steps as listed here : https://docs.cloudera.com/runtime/7.0.3/phoenix-access-data/topics/phoenix-mapping-schemas.html
-
-
-1 > 
-
-Locate the HBase service > Configuration tab > Scope > (Service-Wide) > HBase Service Advanced Configuration Snippet (Safety Valve) for hbase-site.xml
+1> Locate the HBase service > Configuration tab > Scope > (Service-Wide) > HBase Service Advanced Configuration Snippet (Safety Valve) for hbase-site.xml
 
           Name: phoenix.schema.isNamespaceMappingEnabled
           Value: true
