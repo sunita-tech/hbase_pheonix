@@ -1,4 +1,12 @@
 
+
+
+1> Setting up Phoenix
+2> Demo for Phoenix interective sql
+3> Demo for Phoenix script for bulk upload
+4> Demo for Phoenix spark script
+
+
 Setting up Pheonix on Hbase with CDP DC 7.0.3 
 
 Steps
@@ -41,6 +49,7 @@ Description: With true setting (default): After namespace mapping is enabled wit
  click on ranger webui > access manager > role based policies > click on cm_hbase > check "all - table, column-family, column" 
 >check under users > e.g. hbase,admin or clouder-scm (used in example below)
 
+2 > Demo for Phonix Interective SQL
 
 Now ssh to Hbase node( look in cm for Hbase instance) with hbase user and goto Phoenix SQL 
 
@@ -170,3 +179,9 @@ Verify from hbase shell , with list command, you wont see the table in hbase.
              atlas_janus                                                                                                                                                  
              test                                                                                                                                                         
             9 row(s)
+3 > Demo for Phoenix Script with bulk load
+ 
+ 1>  Download yahoo.sql
+ 2>  Download python script to generate bulk load in CSV format (yahaodata.py)
+ 3>  Execute script using phoenix script
+ 
