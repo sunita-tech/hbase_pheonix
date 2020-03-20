@@ -1,12 +1,14 @@
 
+Setting up Pheonix on Hbase with CDP DC 7.0.3 with tutorial and Demo
+
+Summary:
 
           1> Setting up Phoenix
           2> Demo for Phoenix interective sql
           3> Demo for Phoenix script for bulk upload
           4> Demo for Phoenix spark script
 
-
-Setting up Pheonix on Hbase with CDP DC 7.0.3 
+1 > Setting up Phoenix:
 
 Steps
 
@@ -180,8 +182,8 @@ Verify from hbase shell , with list command, you wont see the table in hbase.
             9 row(s)
 3 > Demo for Phoenix Script with bulk load
  
- 
- 1>  Download yahoo.sql
- 2>  Download python script to generate bulk load in CSV format (yahaodata.py)
- 3>  Execute script using phoenix script
+
+           1>  Download yahoo.sql
+           2>  Download python script to generate bulk load in CSV format (yahaodata.py)
+           3>  Execute script using phoenix script
  
