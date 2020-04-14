@@ -75,11 +75,13 @@ Demo for Phonix Interective SQL :
 
     2> create table in phoenix
 
-        0: jdbc:phoenix:> create table if not exists us_population(
-        . . . . . . . . > state char(2) not null,
-        . . . . . . . . > city varchar not null,
-        . . . . . . . . > polulation bigint,
-        . . . . . . . . > constraint my_pk primary key (state,city));
+        0: jdbc:phoenix:> 
+        create table if not exists us_population(
+            state char(2) not null,
+            city varchar not null,
+            polulation bigint,
+            constraint my_pk primary key (state,city));
+        
         No rows affected (1.321 seconds)
 
     3> check if table is created "us_population"
